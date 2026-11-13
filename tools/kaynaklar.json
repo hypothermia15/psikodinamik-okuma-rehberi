@@ -1,0 +1,471 @@
+{
+ "caspi2002": {
+  "pmid": "12161658",
+  "doi": "10.1126/science.1072290",
+  "etiket": "Caspi ve ark. 2002",
+  "metin": "Caspi A, McClay J, Moffitt TE, Mill J, Martin J, Craig IW, et al. Role of genotype in the cycle of violence in maltreated children. Science. 2002;297(5582):851-4.",
+  "ilk": "Caspi A"
+ },
+ "caspi2003": {
+  "pmid": "12869766",
+  "doi": "10.1126/science.1083968",
+  "etiket": "Caspi ve ark. 2003",
+  "metin": "Caspi A, Sugden K, Moffitt TE, Taylor A, Craig IW, Harrington H, et al. Influence of life stress on depression: moderation by a polymorphism in the 5-HTT gene. Science. 2003;301(5631):386-9.",
+  "ilk": "Caspi A"
+ },
+ "culverhouse2018": {
+  "pmid": "28373689",
+  "doi": "10.1038/mp.2017.44",
+  "etiket": "Culverhouse ve ark. 2018",
+  "metin": "Culverhouse RC, Saccone NL, Horton AC, Ma Y, Anstey KJ, Banaschewski T, et al. Collaborative meta-analysis finds no evidence of a strong interaction between stress and 5-HTTLPR genotype contributing to the development of depression. Mol Psychiatry. 2018;23(1):133-142.",
+  "ilk": "Culverhouse RC"
+ },
+ "border2019": {
+  "pmid": "30845820",
+  "doi": "10.1176/appi.ajp.2018.18070881",
+  "etiket": "Border ve ark. 2019",
+  "metin": "Border R, Johnson EC, Evans LM, Smolen A, Berley N, Sullivan PF, et al. No Support for Historical Candidate Gene or Candidate Gene-by-Interaction Hypotheses for Major Depression Across Multiple Large Samples. Am J Psychiatry. 2019;176(5):376-387.",
+  "ilk": "Border R"
+ },
+ "byrd2014": {
+  "pmid": "23786983",
+  "doi": "10.1016/j.biopsych.2013.05.004",
+  "etiket": "Byrd ve Manuck 2014",
+  "metin": "Byrd AL, Manuck SB. MAOA, childhood maltreatment, and antisocial behavior: meta-analysis of a gene-environment interaction. Biol Psychiatry. 2014;75(1):9-17.",
+  "ilk": "Byrd AL"
+ },
+ "fonagy1996": {
+  "pmid": "8907081",
+  "doi": "10.1037//0022-006x.64.1.22",
+  "etiket": "Fonagy ve ark. 1996",
+  "metin": "Fonagy P, Leigh T, Steele M, Steele H, Kennedy R, Mattoon G, et al. The relation of attachment status, psychiatric classification, and response to psychotherapy. J Consult Clin Psychol. 1996;64(1):22-31.",
+  "ilk": "Fonagy P"
+ },
+ "granqvist2017": {
+  "pmid": "28745146",
+  "doi": "10.1080/14616734.2017.1354040",
+  "etiket": "Granqvist ve ark. 2017",
+  "metin": "Granqvist P, Sroufe LA, Dozier M, Hesse E, Steele M, van Ijzendoorn M, et al. Disorganized attachment in infancy: a review of the phenomenon and its implications for clinicians and policy-makers. Attach Hum Dev. 2017;19(6):534-558.",
+  "ilk": "Granqvist P"
+ },
+ "fraiberg1975": {
+  "pmid": "1141566",
+  "doi": "10.1016/s0002-7138(09)61442-4",
+  "etiket": "Fraiberg ve ark. 1975",
+  "metin": "Fraiberg S, Adelson E, Shapiro V. Ghosts in the nursery. A psychoanalytic approach to the problems of impaired infant-mother relationships. J Am Acad Child Psychiatry. 1975;14(3):387-421.",
+  "ilk": "Fraiberg S"
+ },
+ "leichsenring2008": {
+  "pmid": "18827212",
+  "doi": "10.1001/jama.300.13.1551",
+  "etiket": "Leichsenring ve Rabung 2008",
+  "metin": "Leichsenring F, Rabung S. Effectiveness of long-term psychodynamic psychotherapy: a meta-analysis. JAMA. 2008;300(13):1551-65.",
+  "ilk": "Leichsenring F"
+ },
+ "abbass2013": {
+  "pmid": "23880496",
+  "doi": "10.1016/j.jaac.2013.05.014",
+  "etiket": "Abbass ve ark. 2013",
+  "metin": "Abbass AA, Rabung S, Leichsenring F, Refseth JS, Midgley N. Psychodynamic psychotherapy for children and adolescents: a meta-analysis of short-term psychodynamic models. J Am Acad Child Adolesc Psychiatry. 2013;52(8):863-75.",
+  "ilk": "Abbass AA"
+ },
+ "goodyer2017": {
+  "pmid": "27914903",
+  "doi": "10.1016/S2215-0366(16)30378-9",
+  "etiket": "Goodyer ve ark. 2017",
+  "metin": "Goodyer IM, Reynolds S, Barrett B, Byford S, Dubicka B, Hill J, et al. Cognitive behavioural therapy and short-term psychoanalytical psychotherapy versus a brief psychosocial intervention in adolescents with unipolar major depressive disorder (IMPACT): a multicentre, pragmatic, observer-blind, randomised controlled superiority trial. Lancet Psychiatry. 2017;4(2):109-119.",
+  "ilk": "Goodyer IM"
+ },
+ "fluckiger2018": {
+  "pmid": "29792475",
+  "doi": "10.1037/pst0000172",
+  "etiket": "Flückiger ve ark. 2018",
+  "metin": "Flückiger C, Del Re AC, Wampold BE, Horvath AO. The alliance in adult psychotherapy: A meta-analytic synthesis. Psychotherapy (Chic). 2018;55(4):316-340.",
+  "ilk": "Flückiger C"
+ },
+ "karver2018": {
+  "pmid": "30335449",
+  "doi": "10.1037/pst0000176",
+  "etiket": "Karver ve ark. 2018",
+  "metin": "Karver MS, De Nadai AS, Monahan M, Shirk SR. Meta-analysis of the prospective relation between alliance and outcome in child and adolescent psychotherapy. Psychotherapy (Chic). 2018;55(4):341-355.",
+  "ilk": "Karver MS"
+ },
+ "butzlaff1998": {
+  "pmid": "9633674",
+  "doi": "10.1001/archpsyc.55.6.547",
+  "etiket": "Butzlaff ve Hooley 1998",
+  "metin": "Butzlaff RL, Hooley JM. Expressed emotion and psychiatric relapse: a meta-analysis. Arch Gen Psychiatry. 1998;55(6):547-52.",
+  "ilk": "Butzlaff RL"
+ },
+ "salazar2021": {
+  "pmid": "34259821",
+  "doi": "10.1001/jamapsychiatry.2021.0830",
+  "etiket": "Salazar de Pablo ve ark. 2021",
+  "metin": "Salazar de Pablo G, Radua J, Pereira J, Bonoldi I, Arienti V, Besana F, et al. Probability of Transition to Psychosis in Individuals at Clinical High Risk: An Updated Meta-analysis. JAMA Psychiatry. 2021;78(9):970-978.",
+  "ilk": "Salazar de Pablo G"
+ },
+ "hooley1989": {
+  "pmid": "2768657",
+  "doi": "10.1037//0021-843x.98.3.229",
+  "etiket": "Hooley ve Teasdale 1989",
+  "metin": "Hooley JM, Teasdale JD. Predictors of relapse in unipolar depressives: expressed emotion, marital distress, and perceived criticism. J Abnorm Psychol. 1989;98(3):229-35.",
+  "ilk": "Hooley JM"
+ },
+ "blatt1995": {
+  "pmid": "7896977",
+  "doi": "10.1037//0022-006x.63.1.125",
+  "etiket": "Blatt ve ark. 1995",
+  "metin": "Blatt SJ, Quinlan DM, Pilkonis PA, Shea MT. Impact of perfectionism and need for approval on the brief treatment of depression: the National Institute of Mental Health Treatment of Depression Collaborative Research Program revisited. J Consult Clin Psychol. 1995;63(1):125-32.",
+  "ilk": "Blatt SJ"
+ },
+ "beck1985": {
+  "pmid": "3985195",
+  "doi": "10.1176/ajp.142.5.559",
+  "etiket": "Beck ve ark. 1985",
+  "metin": "Beck AT, Steer RA, Kovacs M, Garrison B. Hopelessness and eventual suicide: a 10-year prospective study of patients hospitalized with suicidal ideation. Am J Psychiatry. 1985;142(5):559-63.",
+  "ilk": "Beck AT"
+ },
+ "rudd2006": {
+  "pmid": "16342293",
+  "doi": "10.1002/jclp.20227",
+  "etiket": "Rudd ve ark. 2006",
+  "metin": "Rudd MD, Mandrusiak M, Joiner TE. The case against no-suicide contracts: the commitment to treatment statement as a practice alternative. J Clin Psychol. 2006;62(2):243-51.",
+  "ilk": "Rudd MD"
+ },
+ "milrod2007": {
+  "pmid": "17267789",
+  "doi": "10.1176/ajp.2007.164.2.265",
+  "etiket": "Milrod ve ark. 2007",
+  "metin": "Milrod B, Leon AC, Busch F, Rudden M, Schwalberg M, Clarkin J, et al. A randomized controlled clinical trial of psychoanalytic psychotherapy for panic disorder. Am J Psychiatry. 2007;164(2):265-72.",
+  "ilk": "Milrod B"
+ },
+ "brotman2007": {
+  "pmid": "17909129",
+  "doi": "10.1001/archpsyc.64.10.1172",
+  "etiket": "Brotman ve ark. 2007",
+  "metin": "Brotman LM, Gouley KK, Huang KY, Kamboukos D, Fratto C, Pine DS. Effects of a psychosocial family-based preventive intervention on cortisol response to a social challenge in preschoolers at high risk for antisocial behavior. Arch Gen Psychiatry. 2007;64(10):1172-9.",
+  "ilk": "Brotman LM"
+ },
+ "lieb2000": {
+  "pmid": "10986549",
+  "doi": "10.1001/archpsyc.57.9.859",
+  "etiket": "Lieb ve ark. 2000",
+  "metin": "Lieb R, Wittchen HU, Höfler M, Fuetsch M, Stein MB, Merikangas KR. Parental psychopathology, parenting styles, and the risk of social phobia in offspring: a prospective-longitudinal community study. Arch Gen Psychiatry. 2000;57(9):859-66.",
+  "ilk": "Lieb R"
+ },
+ "kendler2008": {
+  "pmid": "18391130",
+  "doi": "10.1001/archpsyc.65.4.421",
+  "etiket": "Kendler ve ark. 2008",
+  "metin": "Kendler KS, Gardner CO, Annas P, Neale MC, Eaves LJ, Lichtenstein P. A longitudinal twin study of fears from middle childhood to early adulthood: evidence for a developmentally dynamic genome. Arch Gen Psychiatry. 2008;65(4):421-9.",
+  "ilk": "Kendler KS"
+ },
+ "shedler2010": {
+  "pmid": "20141265",
+  "doi": "10.1037/a0018378",
+  "etiket": "Shedler 2010",
+  "metin": "Shedler J. The efficacy of psychodynamic psychotherapy. Am Psychol. 2010;65(2):98-109.",
+  "ilk": "Shedler J"
+ },
+ "ratanawongsa2013": {
+  "pmid": "23277199",
+  "doi": "10.1001/jamainternmed.2013.1216",
+  "etiket": "Ratanawongsa ve ark. 2013",
+  "metin": "Ratanawongsa N, Karter AJ, Parker MM, Lyles CR, Heisler M, Moffet HH, et al. Communication and medication refill adherence: the Diabetes Study of Northern California. JAMA Intern Med. 2013;173(3):210-8.",
+  "ilk": "Ratanawongsa N"
+ },
+ "krupnick1996": {
+  "pmid": "8698947",
+  "doi": "10.1037//0022-006x.64.3.532",
+  "etiket": "Krupnick ve ark. 1996",
+  "metin": "Krupnick JL, Sotsky SM, Simmens S, Moyer J, Elkin I, Watkins J, et al. The role of the therapeutic alliance in psychotherapy and pharmacotherapy outcome: findings in the National Institute of Mental Health Treatment of Depression Collaborative Research Program. J Consult Clin Psychol. 1996;64(3):532-9.",
+  "ilk": "Krupnick JL"
+ },
+ "ougrin2018": {
+  "pmid": "29731412",
+  "doi": "10.1016/S2215-0366(18)30129-9",
+  "etiket": "Ougrin ve ark. 2018",
+  "metin": "Ougrin D, Corrigall R, Poole J, Zundel T, Sarhane M, Slater V, et al. Comparison of effectiveness and cost-effectiveness of an intensive community supported discharge service versus treatment as usual for adolescents with psychiatric emergencies: a randomised controlled trial. Lancet Psychiatry. 2018;5(6):477-485.",
+  "ilk": "Ougrin D"
+ },
+ "correll2018": {
+  "pmid": "29800949",
+  "doi": "10.1001/jamapsychiatry.2018.0623",
+  "etiket": "Correll ve ark. 2018",
+  "metin": "Correll CU, Galling B, Pawar A, Krivko A, Bonetto C, Ruggeri M, et al. Comparison of Early Intervention Services vs Treatment as Usual for Early-Phase Psychosis: A Systematic Review, Meta-analysis, and Meta-regression. JAMA Psychiatry. 2018;75(6):555-565.",
+  "ilk": "Correll CU"
+ },
+ "midgley2021": {
+  "pmid": "33986713",
+  "doi": "10.3389/fpsyg.2021.662671",
+  "etiket": "Midgley ve ark. 2021",
+  "metin": "Midgley N, Mortimer R, Cirasola A, Batra P, Kennedy E. The Evidence-Base for Psychodynamic Psychotherapy With Children and Adolescents: A Narrative Synthesis. Front Psychol. 2021;12:662671.",
+  "ilk": "Midgley N"
+ },
+ "gillies2016": {
+  "pmid": "27726123",
+  "doi": "10.1002/14651858.CD012371",
+  "etiket": "Gillies ve ark. 2016",
+  "metin": "Gillies D, Maiocchi L, Bhandari AP, Taylor F, Gray C, O'Brien L. Psychological therapies for children and adolescents exposed to trauma. Cochrane Database Syst Rev. 2016;10(10):CD012371.",
+  "ilk": "Gillies D"
+ },
+ "stoffers2022": {
+  "pmid": "36375174",
+  "doi": "10.1002/14651858.CD012956.pub2",
+  "etiket": "Stoffers-Winterling ve ark. 2022",
+  "metin": "Stoffers-Winterling JM, Storebø OJ, Pereira Ribeiro J, Kongerslev MT, Völlm BA, Mattivi JT, et al. Pharmacological interventions for people with borderline personality disorder. Cochrane Database Syst Rev. 2022;11(11):CD012956.",
+  "ilk": "Stoffers-Winterling JM"
+ },
+ "dutra2009": {
+  "pmid": "19525736",
+  "doi": "10.1097/NMD.0b013e3181a653b7",
+  "etiket": "Dutra ve ark. 2009",
+  "metin": "Dutra L, Bureau JF, Holmes B, Lyubchik A, Lyons-Ruth K. Quality of early care and childhood trauma: a prospective study of developmental pathways to dissociation. J Nerv Ment Dis. 2009;197(6):383-90.",
+  "ilk": "Dutra L"
+ },
+ "milrod2016": {
+  "pmid": "27464313",
+  "doi": "10.4088/JCP.14m09507",
+  "etiket": "Milrod ve ark. 2016",
+  "metin": "Milrod B, Chambless DL, Gallop R, Busch FN, Schwalberg M, McCarthy KS, et al. Psychotherapies for panic disorder: a tale of two sites. J Clin Psychiatry. 2016;77(7):927-35.",
+  "ilk": "Milrod B"
+ },
+ "clauss2012": {
+  "pmid": "23021481",
+  "doi": "10.1016/j.jaac.2012.08.002",
+  "etiket": "Clauss ve Blackford 2012",
+  "metin": "Clauss JA, Blackford JU. Behavioral inhibition and risk for developing social anxiety disorder: a meta-analytic study. J Am Acad Child Adolesc Psychiatry. 2012;51(10):1066-1075.e1.",
+  "ilk": "Clauss JA"
+ },
+ "kossowsky2013": {
+  "pmid": "23680783",
+  "doi": "10.1176/appi.ajp.2012.12070893",
+  "etiket": "Kossowsky ve ark. 2013",
+  "metin": "Kossowsky J, Pfaltz MC, Schneider S, Taeymans J, Locher C, Gaab J. The separation anxiety hypothesis of panic disorder revisited: a meta-analysis. Am J Psychiatry. 2013;170(7):768-81.",
+  "ilk": "Kossowsky J"
+ },
+ "ceci1993": {
+  "pmid": "8316609",
+  "doi": "10.1037/0033-2909.113.3.403",
+  "etiket": "Ceci ve Bruck 1993",
+  "metin": "Ceci SJ, Bruck M. Suggestibility of the child witness: a historical review and synthesis. Psychol Bull. 1993;113(3):403-39.",
+  "ilk": "Ceci SJ"
+ },
+ "dalenberg2012": {
+  "pmid": "22409505",
+  "doi": "10.1037/a0027447",
+  "etiket": "Dalenberg ve ark. 2012",
+  "metin": "Dalenberg CJ, Brand BL, Gleaves DH, Dorahy MJ, Loewenstein RJ, Cardeña E, et al. Evaluation of the evidence for the trauma and fantasy models of dissociation. Psychol Bull. 2012;138(3):550-88.",
+  "ilk": "Dalenberg CJ"
+ },
+ "lynn2014": {
+  "pmid": "24773505",
+  "doi": "10.1037/a0035570",
+  "etiket": "Lynn ve ark. 2014",
+  "metin": "Lynn SJ, Lilienfeld SO, Merckelbach H, Giesbrecht T, McNally RJ, Loftus EF, et al. The trauma model of dissociation: inconvenient truths and stubborn fictions. Comment on Dalenberg et al. (2012). Psychol Bull. 2014;140(3):896-910.",
+  "ilk": "Lynn SJ"
+ },
+ "ogawa1997": {
+  "pmid": "9449009",
+  "doi": "10.1017/s0954579497001478",
+  "etiket": "Ogawa ve ark. 1997",
+  "metin": "Ogawa JR, Sroufe LA, Weinfield NS, Carlson EA, Egeland B. Development and the fragmented self: longitudinal study of dissociative symptomatology in a nonclinical sample. Dev Psychopathol. 1997;9(4):855-79.",
+  "ilk": "Ogawa JR"
+ },
+ "couturier2013": {
+  "pmid": "22821753",
+  "doi": "10.1002/eat.22042",
+  "etiket": "Couturier ve ark. 2013",
+  "metin": "Couturier J, Kimber M, Szatmari P. Efficacy of family-based treatment for adolescents with eating disorders: a systematic review and meta-analysis. Int J Eat Disord. 2013;46(1):3-11.",
+  "ilk": "Couturier J"
+ },
+ "khantzian1985": {
+  "pmid": "3904487",
+  "doi": "10.1176/ajp.142.11.1259",
+  "etiket": "Khantzian 1985",
+  "metin": "Khantzian EJ. The self-medication hypothesis of addictive disorders: focus on heroin and cocaine dependence. Am J Psychiatry. 1985;142(11):1259-64.",
+  "ilk": "Khantzian EJ"
+ },
+ "lembke2012": {
+  "pmid": "22924576",
+  "doi": "10.3109/00952990.2012.694532",
+  "etiket": "Lembke 2012",
+  "metin": "Lembke A. Time to abandon the self-medication hypothesis in patients with psychiatric disorders. Am J Drug Alcohol Abuse. 2012;38(6):524-9.",
+  "ilk": "Lembke A"
+ },
+ "miller1993": {
+  "pmid": "8326047",
+  "doi": "10.1037//0022-006x.61.3.455",
+  "etiket": "Miller ve ark. 1993",
+  "metin": "Miller WR, Benefield RG, Tonigan JS. Enhancing motivation for change in problem drinking: a controlled comparison of two therapist styles. J Consult Clin Psychol. 1993;61(3):455-61.",
+  "ilk": "Miller WR"
+ },
+ "pickles2016": {
+  "pmid": "27793431",
+  "doi": "10.1016/S0140-6736(16)31229-6",
+  "etiket": "Pickles ve ark. 2016",
+  "metin": "Pickles A, Le Couteur A, Leadbitter K, Salomone E, Cole-Fletcher R, Tobin H, et al. Parent-mediated social communication therapy for young children with autism (PACT): long-term follow-up of a randomised controlled trial. Lancet. 2016;388(10059):2501-9.",
+  "ilk": "Pickles A"
+ },
+ "pellicano2022": {
+  "pmid": "34730840",
+  "doi": "10.1111/jcpp.13534",
+  "etiket": "Pellicano ve den Houting 2022",
+  "metin": "Pellicano E, den Houting J. Annual Research Review: Shifting from 'normal science' to neurodiversity in autism science. J Child Psychol Psychiatry. 2022;63(4):381-96.",
+  "ilk": "Pellicano E"
+ },
+ "zanarini2010": {
+  "pmid": "20395399",
+  "doi": "10.1176/appi.ajp.2009.09081130",
+  "etiket": "Zanarini ve ark. 2010",
+  "metin": "Zanarini MC, Frankenburg FR, Reich DB, Fitzmaurice G. Time to attainment of recovery from borderline personality disorder and stability of recovery: a 10-year prospective follow-up study. Am J Psychiatry. 2010;167(6):663-7.",
+  "ilk": "Zanarini MC"
+ },
+ "rossouw2012": {
+  "pmid": "23200287",
+  "doi": "10.1016/j.jaac.2012.09.018",
+  "etiket": "Rossouw ve Fonagy 2012",
+  "metin": "Rossouw TI, Fonagy P. Mentalization-based treatment for self-harm in adolescents: a randomized controlled trial. J Am Acad Child Adolesc Psychiatry. 2012;51(12):1304-1313.e3.",
+  "ilk": "Rossouw TI"
+ },
+ "sharp2015": {
+  "pmid": "26251037",
+  "doi": "10.1111/jcpp.12449",
+  "etiket": "Sharp ve Fonagy 2015",
+  "metin": "Sharp C, Fonagy P. Practitioner review: borderline personality disorder in adolescence – recent conceptualization, intervention, and implications for clinical practice. J Child Psychol Psychiatry. 2015;56(12):1266-88.",
+  "ilk": "Sharp C"
+ },
+ "bandelow2010": {
+  "pmid": "20438240",
+  "doi": "10.1037/a0018095",
+  "etiket": "Bandelow ve ark. 2010",
+  "metin": "Bandelow B, Schmahl C, Falkai P, Wedekind D. Borderline personality disorder: a dysregulation of the endogenous opioid system? Psychol Rev. 2010;117(2):623-36.",
+  "ilk": "Bandelow B"
+ },
+ "daros2013": {
+  "pmid": "23149223",
+  "doi": "10.1017/S0033291712002607",
+  "etiket": "Daros ve ark. 2013",
+  "metin": "Daros AR, Zakzanis KK, Ruocco AC. Facial emotion recognition in borderline personality disorder. Psychol Med. 2013;43(9):1953-63.",
+  "ilk": "Daros AR"
+ },
+ "russ2008": {
+  "pmid": "18708489",
+  "doi": "10.1176/appi.ajp.2008.07030376",
+  "etiket": "Russ ve ark. 2008",
+  "metin": "Russ E, Shedler J, Bradley R, Westen D. Refining the construct of narcissistic personality disorder: diagnostic criteria and subtypes. Am J Psychiatry. 2008;165(11):1473-81.",
+  "ilk": "Russ E"
+ },
+ "gabbard1989": {
+  "pmid": "2819295",
+  "doi": "",
+  "etiket": "Gabbard 1989",
+  "metin": "Gabbard GO. Two subtypes of narcissistic personality disorder. Bull Menninger Clin. 1989;53(6):527-32.",
+  "ilk": "Gabbard GO"
+ },
+ "cain2008": {
+  "pmid": "18029072",
+  "doi": "10.1016/j.cpr.2007.09.006",
+  "etiket": "Cain ve ark. 2008",
+  "metin": "Cain NM, Pincus AL, Ansell EB. Narcissism at the crossroads: phenotypic description of pathological narcissism across clinical theory, social/personality psychology, and psychiatric diagnosis. Clin Psychol Rev. 2008;28(4):638-56.",
+  "ilk": "Cain NM"
+ },
+ "wetzel2020": {
+  "pmid": "31670564",
+  "doi": "10.1037/pspp0000266",
+  "etiket": "Wetzel ve ark. 2020",
+  "metin": "Wetzel E, Grijalva E, Robins RW, Roberts BW. You're still so vain: changes in narcissism from young adulthood to middle age. J Pers Soc Psychol. 2020;119(2):479-96.",
+  "ilk": "Wetzel E"
+ },
+ "frick2014": {
+  "pmid": "23796269",
+  "doi": "10.1037/a0033076",
+  "etiket": "Frick ve ark. 2014",
+  "metin": "Frick PJ, Ray JV, Thornton LC, Kahn RE. Can callous-unemotional traits enhance the understanding, diagnosis, and treatment of serious conduct problems in children and adolescents? A comprehensive review. Psychol Bull. 2014;140(1):1-57.",
+  "ilk": "Frick PJ"
+ },
+ "raine1995": {
+  "pmid": "7485621",
+  "doi": "10.1176/ajp.152.11.1595",
+  "etiket": "Raine ve ark. 1995",
+  "metin": "Raine A, Venables PH, Williams M. High autonomic arousal and electrodermal orienting at age 15 years as protective factors against criminal behavior at age 29 years. Am J Psychiatry. 1995;152(11):1595-600.",
+  "ilk": "Raine A"
+ },
+ "vanijzendoorn1999": {
+  "pmid": "16506532",
+  "doi": "10.1017/s0954579499002035",
+  "etiket": "van IJzendoorn ve ark. 1999",
+  "metin": "van IJzendoorn MH, Schuengel C, Bakermans-Kranenburg MJ. Disorganized attachment in early childhood: meta-analysis of precursors, concomitants, and sequelae. Dev Psychopathol. 1999;11(2):225-49.",
+  "ilk": "van IJzendoorn MH"
+ },
+ "lock2010": {
+  "pmid": "20921118",
+  "doi": "10.1001/archgenpsychiatry.2010.128",
+  "etiket": "Lock ve ark. 2010",
+  "metin": "Lock J, Le Grange D, Agras WS, Moye A, Bryson SW, Jo B. Randomized clinical trial comparing family-based treatment with adolescent-focused individual therapy for adolescents with anorexia nervosa. Arch Gen Psychiatry. 2010;67(10):1025-32.",
+  "ilk": "Lock J"
+ },
+ "stanley2018": {
+  "pmid": "29998307",
+  "doi": "10.1001/jamapsychiatry.2018.1776",
+  "etiket": "Stanley ve ark. 2018",
+  "metin": "Stanley B, Brown GK, Brenner LA, Galfalvy HC, Currier GW, Knox KL, et al. Comparison of the safety planning intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018;75(9):894-900.",
+  "ilk": "Stanley B"
+ },
+ "shaw2025": {
+  "pmid": "40232988",
+  "doi": "10.15585/mmwr.ss7402a1",
+  "etiket": "Shaw ve ark. 2025",
+  "metin": "Shaw KA, Williams S, Patrick ME, Valencia-Prado M, Durkin MS, Howerton EM, et al. Prevalence and early identification of autism spectrum disorder among children aged 4 and 8 years – Autism and Developmental Disabilities Monitoring Network, 16 sites, United States, 2022. MMWR Surveill Summ. 2025;74(2):1-22.",
+  "ilk": "Shaw KA"
+ },
+ "walkup2008": {
+  "pmid": "18974308",
+  "doi": "10.1056/NEJMoa0804633",
+  "etiket": "Walkup ve ark. 2008",
+  "metin": "Walkup JT, Albano AM, Piacentini J, Birmaher B, Compton SN, Sherrill JT, et al. Cognitive behavioral therapy, sertraline, or a combination in childhood anxiety. N Engl J Med. 2008;359(26):2753-66.",
+  "ilk": "Walkup JT"
+ },
+ "gabbard2014": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "Gabbard 2014",
+  "metin": "Gabbard GO. Psychodynamic psychiatry in clinical practice. 5th ed. American Psychiatric Publishing; 2014. ISBN 978-1-58562-443-0.",
+  "ilk": "Gabbard GO"
+ },
+ "dsm5": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "APA 2013",
+  "metin": "American Psychiatric Association. Diagnostic and statistical manual of mental disorders. 5th ed. Arlington (VA): American Psychiatric Publishing; 2013.",
+  "ilk": "American Psychiatric Association"
+ },
+ "pdm2": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "Lingiardi ve McWilliams 2017",
+  "metin": "Lingiardi V, McWilliams N, editors. Psychodynamic diagnostic manual: PDM-2. 2nd ed. New York: Guilford Press; 2017.",
+  "ilk": "Lingiardi V"
+ },
+ "holmes1858": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "Holmes 1858",
+  "metin": "Holmes OW. The autocrat of the breakfast-table. Boston: Phillips, Sampson and Company; 1858.",
+  "ilk": "Holmes OW"
+ },
+ "vaillant1977": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "Vaillant 1977",
+  "metin": "Vaillant GE. Adaptation to life. Boston: Little, Brown; 1977.",
+  "ilk": "Vaillant GE"
+ },
+ "keys1950": {
+  "pmid": "",
+  "doi": "",
+  "etiket": "Keys ve ark. 1950",
+  "metin": "Keys A, Brožek J, Henschel A, Mickelsen O, Taylor HL. The biology of human starvation. Minneapolis: University of Minnesota Press; 1950.",
+  "ilk": "Keys A"
+ }
+}
