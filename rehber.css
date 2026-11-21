@@ -679,3 +679,74 @@ html.js .oda-statik { display: none; }
   .form-baski p { margin: 0 0 4pt; white-space: pre-wrap; }
 }
 @page { margin: 16mm 18mm; }
+
+/* ---------- Okuma derinliği ve açılır başlıklar (Kasım 2026) ---------- */
+.derinlik { position: sticky; top: var(--ust-y); z-index: 5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 14px -8px 6px; padding: 8px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--cizgi); }
+.derinlik button { display: grid; gap: 1px; text-align: left; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--cizgi); background: var(--kart); color: var(--murekkep-2); font: inherit; cursor: pointer; min-height: 48px; }
+.derinlik button strong { font-size: 15px; }
+.derinlik button span { font-size: 12px; color: var(--soluk); line-height: 1.3; }
+.derinlik button[aria-pressed="true"] { border-color: var(--teal); background: var(--teal-acik); color: var(--murekkep); box-shadow: inset 0 0 0 1px var(--teal); }
+.bolum[data-derinlik="1"] [data-kat="2"], .bolum[data-derinlik="1"] [data-kat="3"], .bolum[data-derinlik="2"] [data-kat="3"] { display: none; }
+.derin-ileri { margin: 30px 0 0; text-align: center; }
+.derin-ileri .dugme { cursor: pointer; font: inherit; font-weight: 600; }
+.kat-ipucu { margin: -6px 0 10px; }
+.bolum:not([data-derinlik="1"]) .kat-ipucu { display: none; }
+details.ac > summary { cursor: pointer; list-style: none; display: flex; align-items: flex-start; gap: 10px; }
+details.ac > summary::-webkit-details-marker { display: none; }
+details.ac > summary::after { content: "+"; margin-left: auto; flex: none; font-weight: 700; color: var(--soluk); width: 1.2em; text-align: center; }
+details.ac[open] > summary::after { content: "\2212"; }
+details.ac > summary h4 { margin: 0; }
+details.ac > p { margin: 8px 0 0; }
+.fikirler details.ac > summary { min-height: 30px; align-items: center; }
+.tartisma details.ac > p { margin-top: 8px; }
+
+/* ---------- Kuramcılar ---------- */
+.mono { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font: 700 12px/1 var(--sans); letter-spacing: .02em; color: #fff; flex: none; }
+.mono-buyuk { width: 64px; height: 64px; font-size: 22px; font-family: var(--serif); }
+.mono-klasik, .zc-klasik { background: #5b4636; fill: #5b4636; }
+.mono-ego, .zc-ego { background: #2f4f7a; fill: #2f4f7a; }
+.mono-nesne, .zc-nesne { background: #6b2d4f; fill: #6b2d4f; }
+.mono-kendilik, .zc-kendilik { background: #8a5a0a; fill: #8a5a0a; }
+.mono-gelisim, .zc-gelisim { background: #2a7448; fill: #2a7448; }
+.mono-iliskisel, .zc-iliskisel { background: #a8231a; fill: #a8231a; }
+.nokta { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
+.kuramci-cipler { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.kuramci-cipler a { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px 5px 5px; border-radius: 999px; border: 1px solid var(--cizgi); background: var(--kart); color: var(--murekkep); text-decoration: none; font-size: 15px; min-height: 42px; }
+.kuramci-cipler a:hover { border-color: var(--teal); }
+.zaman-kap { overflow-x: auto; margin: 6px 0 16px; padding: 12px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; }
+.zaman-cizgi { display: block; min-width: 680px; width: 100%; height: auto; }
+.zc-izgara { stroke: var(--cizgi); stroke-width: 1; }
+.zc-yil { font: 500 10px var(--sans); fill: var(--soluk); }
+.zc-ad { font: 500 11.5px var(--sans); fill: var(--murekkep); }
+.zc-cubuk { opacity: .9; }
+.zc-yasiyor { opacity: .55; }
+.zaman-cizgi a:hover .zc-ad, .zaman-cizgi a:focus .zc-ad { fill: var(--teal); text-decoration: underline; }
+.ekol-suz { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+.ekol-suz button { display: inline-flex; align-items: center; padding: 6px 12px; min-height: 36px; border-radius: 999px; border: 1px solid var(--cizgi); background: var(--kart); color: var(--murekkep-2); font: 500 13.5px var(--sans); cursor: pointer; }
+.ekol-suz button[aria-pressed="true"] { border-color: var(--teal); background: var(--teal-acik); color: var(--murekkep); }
+.kuramcilar { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.kuramci { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; padding: 16px 18px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; scroll-margin-top: calc(var(--ust-y) + 16px); }
+.kuramci h3 { margin: 0; font-size: 20px; }
+.kuramci-yil { font: 500 14px var(--sans); color: var(--soluk); margin-left: 6px; white-space: nowrap; }
+.kuramci-ekol { margin: 2px 0 6px; font-size: 13.5px; color: var(--soluk); }
+.kuramci-tek { margin: 0 0 8px; }
+.kuramci details.ac > summary { font-weight: 600; font-size: 14.5px; color: var(--teal); min-height: 32px; align-items: center; }
+.kuramci details.ac > summary::after { margin-left: 6px; }
+.kuramci-kavram span, .kuramci-bolum span { font-size: 13px; color: var(--soluk); margin-right: 4px; }
+.kuramci .cip { display: inline-block; margin: 3px 4px 3px 0; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--cizgi); background: var(--kart-2); color: var(--murekkep-2); font-size: 13px; text-decoration: none; }
+.kuramci .cip:hover { border-color: var(--teal); }
+.kuramci-foto { margin: 0; width: 96px; }
+.kuramci-foto img { width: 96px; height: 96px; object-fit: cover; border-radius: 12px; display: block; }
+.kuramci-foto figcaption { font-size: 10.5px; line-height: 1.3; color: var(--soluk); margin-top: 4px; }
+@media (max-width: 640px) {
+  .derinlik { margin: 10px -6px 4px; padding: 6px; gap: 4px; }
+  .derinlik button { padding: 7px 8px; }
+  .derinlik button span { display: none; }
+  .kuramci { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; }
+  .mono-buyuk { width: 48px; height: 48px; font-size: 17px; }
+}
+@media print {
+  .derinlik, .derin-ileri, .ekol-suz { display: none; }
+  .bolum [data-kat] { display: block !important; }
+}

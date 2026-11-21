@@ -16,6 +16,7 @@ KOK = ARACLAR.parent
 sys.path.insert(0, str(ARACLAR))
 
 import icerik_araclar as A  # noqa: E402
+import icerik_kuramcilar as K
 import icerik_bolumler as B  # noqa: E402
 
 KAYNAK = json.loads((ARACLAR / "kaynaklar.json").read_text(encoding="utf-8"))
@@ -54,6 +55,11 @@ def baglam(vid, adim="", etiket=""):
 
 
 HARF = "ABCD"
+
+
+def bas_harf(ad):
+    p = [x for x in ad.replace(".", " ").split() if x[0].isupper()]
+    return (p[0][0] + p[-1][0]) if len(p) > 1 else p[0][:2]
 VIEWS = []
 
 
@@ -64,9 +70,9 @@ def view(vid, baslik, ust, ic, data_baslik=None, sinif="", h="h2"):
             f'<div class="oturum-son"><nav class="ileri-geri" aria-label="Bölümler arasında"></nav></div></section>')
 
 
-def adim(vid, anahtar, ikon, baslik, govde):
+def adim(vid, anahtar, ikon, baslik, govde, kat=1):
     sid = f"{vid}-{anahtar}"
-    return (f'<section class="adim adim-{anahtar}" id="{sid}" aria-labelledby="{sid}-b"><h3 id="{sid}-b">'
+    return (f'<section class="adim adim-{anahtar}" id="{sid}" data-kat="{kat}" aria-labelledby="{sid}-b"><h3 id="{sid}-b">'
             f'<span class="adim-ikon" aria-hidden="true">{ikon}</span> {esc(baslik)}</h3>{govde}</section>')
 
 
@@ -92,36 +98,43 @@ for b in B.BOLUMLER:
     etiket = f'Bölüm {b["no"]}'
     parcalar = []
     baglam(vid, "okurken", etiket)
-    parcalar.append(adim(vid, "okurken", "📖", "Kitapta ve okurken",
-                         f'<p class="kitapta" data-ara>{md(b["kitapta"])}</p><p class="okurken-baslik">Okurken aklınızda tutun</p>'
-                         f'<ol class="okurken">{"".join(f"<li data-ara>{md(q)}</li>" for q in b["okurken"])}</ol>'))
+    parcalar.append(adim(vid, "kitapta", "📖", "Kitapta", f'<p class="kitapta" data-ara>{md(b["kitapta"])}</p>', 1))
     baglam(vid, "fikirler", etiket)
     parcalar.append(adim(vid, "fikirler", "🧭", "Ana fikirler",
-                         '<ol class="fikirler">' + "".join(
-                             f'<li data-ara><p><strong>{md(h)}.</strong> {md(t)}</p></li>' for h, t in b["fikirler"]) + "</ol>"))
+                         '<p class="not kat-ipucu">Başlığa dokunun: açıklaması açılır.</p><ol class="fikirler">' + "".join(
+                             f'<li data-ara><details class="ac"><summary><strong>{md(h)}</strong></summary><p>{md(t)}</p></details></li>'
+                             for h, t in b["fikirler"]) + "</ol>", 1))
+    baglam(vid, "akilda", etiket)
+    parcalar.append(adim(vid, "akilda", "🎯", "Akılda kalsın", f'<ul class="akilda"><li data-ara>{md(b["akilda"])}</li></ul>', 1))
+    baglam(vid, "okurken", etiket)
+    parcalar.append(adim(vid, "okurken", "🔎", "Okurken aklınızda tutun",
+                         f'<ol class="okurken">{"".join(f"<li data-ara>{md(q)}</li>" for q in b["okurken"])}</ol>', 2))
     baglam(vid, "crs", etiket)
     parcalar.append(adim(vid, "crs", "🧸", "ÇRS’de karşılığı",
-                         '<ul class="crs-liste">' + "".join(f"<li data-ara>{md(x)}</li>" for x in b["crs"]) + "</ul>"))
+                         '<ul class="crs-liste">' + "".join(f"<li data-ara>{md(x)}</li>" for x in b["crs"]) + "</ul>", 2))
+    kur = [k for k in K.KURAMCILAR if b["no"] in k[9]]
+    if kur:
+        parcalar.append(adim(vid, "kuramcilar", "👤", "Bu bölümün kuramcıları", '<ul class="kuramci-cipler">' + "".join(
+            f'<li><a href="#/kuramcilar/{k[0]}"><span class="mono mono-{k[4]}" aria-hidden="true">{esc(bas_harf(k[1]))}</span>'
+            f'<span>{esc(k[1])}</span></a></li>' for k in kur) + "</ul>", 2))
     baglam(vid, "tartisma", etiket)
     parcalar.append(adim(vid, "tartisma", "⚖️", "Tartışmaya açık",
                          '<p class="not">Kitabın 2014’teki kanıt zemini ile bugünkü bilgi arasındaki farklar ve tartışmalı noktalar. '
                          'Künyeler kaynakçada; makalelerin tamamı PubMed’den doğrulandı.</p><div class="tartisma-liste">' + "".join(
-                             f'<article class="tartisma" data-ara><h4>{md(h)}</h4><p>{md(t)}</p></article>'
-                             for h, t in b["tartisma"]) + "</div>"))
+                             f'<article class="tartisma" data-ara><details class="ac"><summary><h4>{md(h)}</h4></summary><p>{md(t)}</p></details></article>'
+                             for h, t in b["tartisma"]) + "</div>", 3))
     baglam(vid, "test", etiket)
     parcalar.append(adim(vid, "test", "✍️", "Vaka soruları",
-                         '<p class="not">Vakalar kurgusaldır; kitabın vakalarından alınmamıştır.</p>' + test_listesi(vid, b["sorular"])))
-    baglam(vid, "akilda", etiket)
-    parcalar.append(adim(vid, "akilda", "🎯", "Akılda kalsın", f'<ul class="akilda"><li data-ara>{md(b["akilda"])}</li></ul>'))
+                         '<p class="not">Vakalar kurgusaldır; kitabın vakalarından alınmamıştır.</p>' + test_listesi(vid, b["sorular"]), 3))
     parcalar.append(adim(vid, "not", "🗒️", "Kendi notum",
                          f'<div class="vaka-not"><label for="{vid}-not-alan">Bu bölümü okurken aklınıza gelenler, kendi vakalarınızla '
                          f'bağlantılar</label><textarea id="{vid}-not-alan" data-not="{vid}" rows="4" placeholder="Hasta kimlik bilgisi '
-                         f'yazmayın."></textarea><p class="kucuk">Yazdıklarınız yalnızca bu tarayıcıda saklanır.</p></div>'))
-    adimlar_nav = [("okurken", "📖", "Okurken"), ("fikirler", "🧭", "Ana fikirler"), ("crs", "🧸", "ÇRS’de"),
-                   ("tartisma", "⚖️", "Tartışma"), ("test", "✍️", "Sorular"), ("akilda", "🎯", "Akılda kalsın"),
-                   ("not", "🗒️", "Notum")]
-    nav = ('<nav class="adimlar" aria-label="Bu bölümün kısımları">' + "".join(
-        f'<a href="#/{vid}/{k}"><span aria-hidden="true">{i}</span> {esc(s)}</a>' for k, i, s in adimlar_nav) + "</nav>")
+                         f'yazmayın."></textarea><p class="kucuk">Yazdıklarınız yalnızca bu tarayıcıda saklanır.</p></div>', 3))
+    parcalar.append('<p class="derin-ileri"><button type="button" class="dugme" data-derin-artir></button></p>')
+    nav = ('<div class="derinlik" role="group" aria-label="Okuma derinliği">'
+           '<button type="button" data-derinlik-sec="1" aria-pressed="false"><strong>Göz at</strong><span>2 dakika · ana fikirler</span></button>'
+           '<button type="button" data-derinlik-sec="2" aria-pressed="false"><strong>Oku</strong><span>okuma soruları · ÇRS · kuramcılar</span></button>'
+           '<button type="button" data-derinlik-sec="3" aria-pressed="false"><strong>Derinleş</strong><span>tartışma · vaka soruları · not</span></button></div>')
     bas = (f'<header class="oturum-bas"><p class="ust-baslik">{esc(B.KISIMLAR[b["kisim"]].split(" · ")[0])} · Bölüm {b["no"]}</p>'
            f'<h2 tabindex="-1">{esc(b["baslik"])}</h2><p class="slogan">{md(b["slogan"])}</p></header>')
     html_ = (f'<section class="view bolum" id="v-{vid}" data-view="{vid}" data-baslik="Bölüm {b["no"]}: {esc(b["kisa"])}" '
@@ -130,6 +143,61 @@ for b in B.BOLUMLER:
              f'Bu bölümü okudum</button><nav class="ileri-geri" aria-label="Bölümler arasında"></nav></div></section>')
     bolum_views.append(dict(id=vid, no=b["no"], kisim=b["kisim"], kisa=b["kisa"], baslik=b["baslik"], slogan=b["slogan"],
                             html=html_, n_tart=len(b["tartisma"]), n_soru=len(b["sorular"])))
+
+# ---------------------------------------------------------------- kuramcılar
+baglam("kuramcilar", "", "Kuramcılar")
+BOLUM_NO = {b["no"] for b in B.BOLUMLER}
+KAVRAM_AD = {k[0] for k in A.KAVRAMLAR}
+Y0, Y1 = 1850, 2030
+
+
+def gorsel(anahtar, ad, ekol):
+    g = K.GORSEL_KUNYE.get(anahtar)
+    if g and (KOK / "gorseller" / g["dosya"]).exists():
+        return (f'<figure class="kuramci-foto"><img src="gorseller/{esc(g["dosya"])}" alt="{esc(ad)}" loading="lazy" width="96" height="96">'
+                f'<figcaption><a href="{esc(g["kaynak"])}" target="_blank" rel="noopener">Görsel: {esc(g["sahibi"])}</a> · {esc(g["lisans"])}</figcaption></figure>')
+    return f'<span class="mono mono-buyuk mono-{ekol}" aria-hidden="true">{esc(bas_harf(ad))}</span>'
+
+
+satir = 22
+svg = [f'<svg class="zaman-cizgi" viewBox="0 0 912 {len(K.KURAMCILAR) * satir + 34}" role="img" '
+       f'aria-label="Kuramcıların yaşam süreleri, {Y0}–{Y1}">']
+for y in range(Y0, Y1 + 1, 30):
+    x = 190 + (y - Y0) / (Y1 - Y0) * 700
+    svg.append(f'<line x1="{x:.0f}" y1="14" x2="{x:.0f}" y2="{len(K.KURAMCILAR) * satir + 22}" class="zc-izgara"/>'
+               f'<text x="{x:.0f}" y="10" class="zc-yil" text-anchor="middle">{y}</text>')
+for n, k in enumerate(sorted(K.KURAMCILAR, key=lambda k: k[2])):
+    a, ad, d, o, ekol = k[:5]
+    x0 = 190 + (d - Y0) / (Y1 - Y0) * 700
+    x1 = 190 + ((o or 2026) - Y0) / (Y1 - Y0) * 700
+    yy = 22 + n * satir
+    svg.append(f'<a href="#/kuramcilar/{a}"><text x="182" y="{yy + 11}" class="zc-ad" text-anchor="end">{esc(ad)}</text>'
+               f'<rect x="{x0:.0f}" y="{yy}" width="{x1 - x0:.0f}" height="14" rx="7" class="zc-cubuk zc-{ekol}{"" if o else " zc-yasiyor"}"/></a>')
+svg.append("</svg>")
+suz = ('<div class="ekol-suz" role="group" aria-label="Ekole göre süz"><button type="button" data-ekol="" aria-pressed="true">Tümü</button>'
+       + "".join(f'<button type="button" data-ekol="{e}" aria-pressed="false"><span class="nokta mono-{e}" aria-hidden="true"></span>{esc(ad)}</button>'
+                 for e, (ad, _) in K.EKOLLER.items()) + "</div>")
+kartlar = []
+for a, ad, d, o, ekol, tek, kitapta, crs, kavramlar, bolumler in K.KURAMCILAR:
+    assert ekol in K.EKOLLER and all(x in KAVRAM_AD for x in kavramlar) and all(x in BOLUM_NO for x in bolumler), a
+    yil = f"{d}–{o}" if o else f"d. {d}"
+    kav = ("<p class=\"kuramci-kavram\"><span>Kavramlar:</span> " + " ".join(f'<a class="cip" href="#/kavramlar">{esc(x)}</a>' for x in kavramlar) + "</p>") if kavramlar else ""
+    bol = " ".join(f'<a class="cip cip-bolum" href="#/bolum-{x}">Bölüm {x}: {esc(KISA[x])}</a>' for x in bolumler)
+    kartlar.append(
+        f'<li class="kuramci" id="kuramcilar-{a}" data-ekol="{ekol}" data-ara>{gorsel(a, ad, ekol)}<div class="kuramci-govde">'
+        f'<h3>{esc(ad)} <span class="kuramci-yil">{yil}</span></h3><p class="kuramci-ekol"><span class="nokta mono-{ekol}" aria-hidden="true"></span>{esc(K.EKOLLER[ekol][0])}</p>'
+        f'<p class="kuramci-tek">{md(tek)}</p><details class="ac"><summary>Kitapta ve ÇRS’de</summary>'
+        f'<p><strong>Kitapta.</strong> {md(kitapta)}</p><p><strong>ÇRS’de.</strong> {md(crs)}</p>{kav}'
+        f'<p class="kuramci-bolum"><span>Geçtiği bölümler:</span> {bol}</p></details></div></li>')
+kur_ic = ('<p class="giris-metin" data-ara>Kitabın kuramsal temelini kuran ve klinik bölümlerde en çok anılan '
+          f'{len(K.KURAMCILAR)} isim. Zaman çizgisinde bir ada dokunun ya da ekole göre süzün. Her kartta kuramcının tek cümlelik '
+          'katkısı var; “Kitapta ve ÇRS’de” başlığı ayrıntıyı açar.</p>'
+          f'<div class="zaman-kap" tabindex="0" aria-label="Zaman çizgisi; yana kaydırılabilir">{"".join(svg)}</div>{suz}'
+          f'<ul class="kuramcilar">{"".join(kartlar)}</ul>'
+          '<p class="kucuk">Doğum ve ölüm yılları genel başvuru kaynaklarındaki bilinen tarihlerdir. Kartlardaki metinler özgündür; '
+          'kitaptan alıntı içermez. Bu sürümde kuramcı fotoğrafı yoktur.</p>')
+kuramcilar = dict(id="kuramcilar", label="Kuramcılar", html=view("kuramcilar", "Kuramcılar: kim, ne dedi, kitapta nerede?", "Tema", kur_ic,
+                                                                 data_baslik="Kuramcılar"))
 
 # ---------------------------------------------------------------- ergenlik
 baglam("ergenlik", "", "Ergenlik notları")
@@ -302,6 +370,7 @@ arac_kartlari = "".join(
     f'<li><a class="kart kart-arac" href="#/{i}"><span class="kart-no" aria-hidden="true">{ik}</span><span class="kart-govde">'
     f'<span class="kart-baslik">{esc(ad)}</span><span class="kart-slogan">{esc(ac)}</span></span></a></li>'
     for i, ik, ad, ac in [
+        ("kuramcilar", "👤", "Kuramcılar", f"{len(K.KURAMCILAR)} kuramcı: zaman çizgisi, tek cümlelik katkı ve kitaptaki yeri."),
         ("ergenlik", "🌱", "Ergenlik notları", "Kitapta dağınık kalan ergenlik geçişleri beş temada."),
         ("oda", "🪑", "Odada kaç kişi var?", "Aile görüşmesinde kimin kimi nasıl gördüğünün haritası."),
         ("kavramlar", "🃏", "Kavram kartları", f"{len(A.KAVRAMLAR)} temel kavram, kendi tanımlarımızla."),
@@ -327,9 +396,9 @@ giris_ic = f"""
 <div class="ilerleme-kutular"></div>
 <p class="kucuk">İlerleme yalnızca bu tarayıcıda saklanır. <button type="button" class="sina-sifirla hepsini-sil">Bütün ilerlemeyi sil</button></p></section>
 <section class="kurallar kullanim" aria-labelledby="kurallar-b"><h2 id="kurallar-b" class="bolum-baslik">Nasıl kullanılır?</h2>
-<ol><li data-ara><span class="kural-no">1</span> Bölümü kitaptan okuyun; “Okurken” sorularını yanınızda tutun.</li>
-<li data-ara><span class="kural-no">2</span> Buraya dönün: ana fikirleri kendi okumanızla karşılaştırın, ÇRS’deki karşılığını ve tartışmalı noktaları okuyun.</li>
-<li data-ara><span class="kural-no">3</span> Vaka sorularıyla kendinizi sınayın; formülasyon şablonuyla kendi vakanız üzerine düşünün.</li></ol></section>
+<ol><li data-ara><span class="kural-no">1</span> <strong>Göz at.</strong> Her bölüm önce kısa hâliyle açılır: kitapta ne var, ana fikirler, akılda kalacak cümle.</li>
+<li data-ara><span class="kural-no">2</span> <strong>Oku.</strong> Bölümü kitaptan okurken okuma sorularını, ÇRS’deki karşılığını ve kuramcıları açın.</li>
+<li data-ara><span class="kural-no">3</span> <strong>Derinleş.</strong> Tartışmaya açık noktalar, vaka soruları ve kendi notunuz en alt katta.</li></ol></section>
 <section aria-labelledby="k1-b"><h2 id="k1-b" class="bolum-baslik">{esc(B.KISIMLAR[1])}</h2><ol class="kartlar">{"".join(kisim_kartlari[1])}</ol></section>
 <section aria-labelledby="k2-b"><h2 id="k2-b" class="bolum-baslik">{esc(B.KISIMLAR[2])}</h2><ol class="kartlar">{"".join(kisim_kartlari[2])}</ol>
 <p class="kucuk">Kitabın 19 bölümünden 15’i bu rehberde işlendi. Kalan dört bölüm ileride eklenebilir:</p>
@@ -340,8 +409,8 @@ giris = dict(id="giris", label="Giriş",
              html=f'<section class="view aktif" id="v-giris" data-view="giris" data-baslik="Giriş" aria-label="Giriş">{giris_ic}</section>')
 
 # ---------------------------------------------------------------- kaynakça (en son: kullanım bilgisi gerekiyor)
-SIRA = ["giris"] + [v["id"] for v in bolum_views] + ["ergenlik", "oda", "kavramlar", "savunmalar", "formulasyon", "tekrar"]
-ETIKET = {"giris": "Giriş", "ergenlik": "Ergenlik notları", "oda": "Odada kaç kişi var?", "kavramlar": "Kavram kartları",
+SIRA = ["giris"] + [v["id"] for v in bolum_views] + ["kuramcilar", "ergenlik", "oda", "kavramlar", "savunmalar", "formulasyon", "tekrar"]
+ETIKET = {"giris": "Giriş", "kuramcilar": "Kuramcılar", "ergenlik": "Ergenlik notları", "oda": "Odada kaç kişi var?", "kavramlar": "Kavram kartları",
           "savunmalar": "Savunma oyunu", "formulasyon": "Formülasyon şablonu", "tekrar": "Karışık test"}
 ETIKET.update({v["id"]: f'Bölüm {v["no"]}' for v in bolum_views})
 
@@ -377,7 +446,7 @@ kay_ic = ('<p class="giris-metin">Rehberde anılan bütün kaynaklar. Makaleleri
           + "".join(kaynak_li(k) for k in makaleler) + "</ol></section>")
 kaynakca = dict(id="kaynakca", label="Kaynakça", html=view("kaynakca", "Kaynakça", "Araçlar", kay_ic))
 
-ORDER = [giris] + bolum_views + [ergenlik, oda, kavramlar, savunmalar, formulasyon, tekrar, kaynakca]
+ORDER = [giris] + bolum_views + [kuramcilar, ergenlik, oda, kavramlar, savunmalar, formulasyon, tekrar, kaynakca]
 
 
 # ---------------------------------------------------------------- gezinti
@@ -393,7 +462,7 @@ nav = ('<nav class="yan" id="yan" aria-label="Rehber içeriği"><div class="yan-
        + "".join(nav_item(v["id"], str(v["no"]), v["kisa"]) for v in bolum_views if v["kisim"] == 1) + "</ol>"
        '<p class="nav-baslik">Kısım II · Bozukluklar</p><ol class="nav-liste">'
        + "".join(nav_item(v["id"], str(v["no"]), v["kisa"]) for v in bolum_views if v["kisim"] == 2) + "</ol>"
-       '<p class="nav-baslik">Tema</p><ol class="nav-liste">' + nav_item("ergenlik", "🌱", "Ergenlik notları") + "</ol>"
+       '<p class="nav-baslik">Tema</p><ol class="nav-liste">' + nav_item("kuramcilar", "👤", "Kuramcılar") + nav_item("ergenlik", "🌱", "Ergenlik notları") + "</ol>"
        '<p class="nav-baslik">Araçlar</p><ol class="nav-liste">'
        + nav_item("oda", "🪑", "Odada kaç kişi var?") + nav_item("kavramlar", "🃏", "Kavram kartları")
        + nav_item("savunmalar", "🛡", "Savunma oyunu") + nav_item("formulasyon", "✎", "Formülasyon şablonu")

@@ -57,6 +57,9 @@
     menuKapat();
     var hedef = alt ? document.getElementById(ad + "-" + alt) : null;
     if (hedef) {
+      katAc(hedef);
+      var hd = hedef.querySelector && hedef.matches(".kuramci") ? hedef.querySelector("details") : null;
+      if (hd) hd.open = true;
       hedef.scrollIntoView({ block: "start" });
     } else {
       window.scrollTo(0, 0);
@@ -67,8 +70,7 @@
   function git(v, el) {
     if (location.hash !== adres(v)) history.pushState(null, "", adres(v));
     goster(v.dataset.view, null, false);
-    var det = el.closest("details");
-    if (det) det.open = true;
+    katAc(el);
     el.scrollIntoView({ block: "center" });
     parla(el);
   }
@@ -85,6 +87,27 @@
     var v = el && el.closest(".view");
     if (v) { goster(v.dataset.view, null, false); el.scrollIntoView({ block: "center" }); parla(el); }
   }
+  /* Okuma derinliği: 1 göz at, 2 oku, 3 derinleş */
+  var DERIN_ILERI = { 1: "Devam et: okuma soruları ve ÇRS’deki karşılığı", 2: "Derinleş: tartışma ve vaka soruları" };
+  function derinlik() { var d = +durum.derinlik; return d >= 1 && d <= 3 ? d : 1; }
+  function derinlikUygula(yeni, ilkYukleme) {
+    if (yeni) { durum.derinlik = yeni; yaz(); }
+    var d = derinlik();
+    bolumler.forEach(function (v) {
+      v.dataset.derinlik = d;
+      $$("[data-derinlik-sec]", v).forEach(function (b) { b.setAttribute("aria-pressed", +b.dataset.derinlikSec === d ? "true" : "false"); });
+      var il = $("[data-derin-artir]", v);
+      if (il) { il.textContent = DERIN_ILERI[d] || ""; il.parentNode.hidden = d >= 3; }
+      if (yeni || (ilkYukleme && d >= 2)) $$(".adim-fikirler details", v).forEach(function (x) { x.open = d >= 2; });
+    });
+  }
+  function katAc(el) {
+    var k = el && el.closest("[data-kat]");
+    if (k && +k.dataset.kat > derinlik()) derinlikUygula(+k.dataset.kat);
+    var dt = el && el.closest("details");
+    if (dt) dt.open = true;
+  }
+
   window.addEventListener("hashchange", rota);
 
   /* Mobil menü */
@@ -559,6 +582,23 @@
       skorYaz(id);
       return;
     }
+    var ds = t.closest("[data-derinlik-sec]");
+    if (ds) { derinlikUygula(+ds.dataset.derinlikSec); return; }
+    var da = t.closest("[data-derin-artir]");
+    if (da) {
+      var onceki = derinlik(), bv = da.closest(".view");
+      derinlikUygula(Math.min(3, onceki + 1));
+      var ilkYeni = bv && bv.querySelector('[data-kat="' + (onceki + 1) + '"]');
+      if (ilkYeni) ilkYeni.scrollIntoView({ block: "start" });
+      return;
+    }
+    var es = t.closest("[data-ekol]");
+    if (es && es.tagName === "BUTTON") {
+      var ek = es.dataset.ekol;
+      $$(".ekol-suz button").forEach(function (b) { b.setAttribute("aria-pressed", b === es ? "true" : "false"); });
+      $$(".kuramcilar .kuramci").forEach(function (li) { li.hidden = !!ek && li.dataset.ekol !== ek; });
+      return;
+    }
     var ok = t.closest(".okundu");
     if (ok) {
       var o = ok.dataset.okundu;
@@ -752,5 +792,6 @@
     skorYaz(vid);
   });
 
+  derinlikUygula(0, true);
   rota();
 })();

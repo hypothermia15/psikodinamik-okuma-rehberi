@@ -8,6 +8,8 @@ Doç. Dr. Miraç Barış Usta’nın, Glen O. Gabbard’ın *Psychodynamic Psych
 
 - Kitabın 19 bölümünden 15’i (1–10, 12, 13, 15–17). Her bölümde yedi adım: kitapta ve okurken (okuma soruları) · ana fikirler · ÇRS’deki karşılığı · tartışmaya açık noktalar · üç kurgusal vaka sorusu · akılda kalsın · kendi notum.
 - “Tartışmaya açık” kutuları kitabın 2014’teki kanıt zeminini bugünkü literatürle karşılaştırır; 61 makalenin künyesi PubMed’den doğrulanmış, DOI ve PubMed bağlantılarıyla verilmiştir.
+- Okuma derinliği: her bölüm üç katta açılır. **Göz at** (kitapta ne var, başlıkları açılan ana fikirler, akılda kalsın), **Oku** (okuma soruları, ÇRS’deki karşılığı, bölümün kuramcıları), **Derinleş** (tartışmaya açık noktalar, vaka soruları, not). Seçim tarayıcıda saklanır; `#/bolum-15/tartisma` gibi doğrudan bağlantılar gereken katı kendiliğinden açar.
+- Kuramcılar: kitapta en çok anılan 17 kuramcı için zaman çizgisi, ekole göre süzme, tek cümlelik katkı, kitaptaki yeri, ÇRS’deki karşılığı ve geçtiği bölümler (`#/kuramcilar`, `#/kuramcilar/kohut`).
 - Ergenlik notları: kitapta dağınık kalan ergenlik geçişleri beş temada ve kitabın bıraktığı boşluklar.
 - Araçlar:
   - “Odada kaç kişi var?”: görüşmedeki kişi sayısına göre imge haritası (n × (n + 1)) ve hücre hücre klinik ipuçları;
@@ -30,7 +32,12 @@ Doç. Dr. Miraç Barış Usta’nın, Glen O. Gabbard’ın *Psychodynamic Psych
 | `rehber.css`, `rehber.js` | Görünüm ve etkileşim; dış betik ya da kütüphane kullanmaz. |
 | `tools/icerik_bolumler.py` | Bölüm içerikleri: okuma soruları, ana fikirler, ÇRS karşılıkları, tartışma noktaları, vaka soruları. |
 | `tools/icerik_araclar.py` | Kavramlar, savunma vinyetleri ve sözlüğü, formülasyon şablonu, ergenlik notları, “odada kaç kişi var?” metinleri. |
+| `tools/icerik_kuramcilar.py` | Kuramcı kartları, ekoller ve görsel künyeleri. |
 | `tools/kaynaklar.json` | Doğrulanmış künyeler (PMID, DOI). |
+
+## Kuramcı görselleri
+
+Depoda kuramcı fotoğrafı yoktur; kartlarda baş harfler gösterilir. Görsel eklemek için dosyayı `gorseller/` klasörüne koyun ve `tools/icerik_kuramcilar.py` içindeki `GORSEL_KUNYE` sözlüğüne dosya adını, kaynak bağlantısını, lisansı ve hak sahibini yazın; künyesi olmayan görsel sayfaya eklenmez. Yalnızca kamu malı ya da açık lisanslı görseller kullanılmalıdır.
 
 ## Kaynak ve sorumluluk
 
