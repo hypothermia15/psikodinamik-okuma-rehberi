@@ -750,3 +750,5 @@ details.ac > p { margin: 8px 0 0; }
   .derinlik, .derin-ileri, .ekol-suz { display: none; }
   .bolum [data-kat] { display: block !important; }
 }
+
+@media (max-width: 640px) { .ust .geri { display: inline-flex; align-items: center; min-height: 40px; } }
