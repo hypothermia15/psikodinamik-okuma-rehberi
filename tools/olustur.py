@@ -146,6 +146,13 @@ for b in B.BOLUMLER:
 
 # ---------------------------------------------------------------- kuramcılar
 baglam("kuramcilar", "", "Kuramcılar")
+_kunye = KOK / "gorseller" / "kunye.csv"
+if _kunye.exists():
+    import csv
+    with open(_kunye, newline="", encoding="utf-8-sig") as _f:
+        for _r in csv.DictReader(_f, delimiter=";"):
+            if all((_r.get(x) or "").strip() for x in ("anahtar", "dosya", "kaynak", "lisans", "sahibi")):
+                K.GORSEL_KUNYE[_r["anahtar"].strip()] = {x: _r[x].strip() for x in ("dosya", "kaynak", "lisans", "sahibi")}
 BOLUM_NO = {b["no"] for b in B.BOLUMLER}
 KAVRAM_AD = {k[0] for k in A.KAVRAMLAR}
 Y0, Y1 = 1850, 2030

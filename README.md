@@ -37,7 +37,7 @@ Doç. Dr. Miraç Barış Usta’nın, Glen O. Gabbard’ın *Psychodynamic Psych
 
 ## Kuramcı görselleri
 
-Depoda kuramcı fotoğrafı yoktur; kartlarda baş harfler gösterilir. Görsel eklemek için dosyayı `gorseller/` klasörüne koyun ve `tools/icerik_kuramcilar.py` içindeki `GORSEL_KUNYE` sözlüğüne dosya adını, kaynak bağlantısını, lisansı ve hak sahibini yazın; künyesi olmayan görsel sayfaya eklenmez. Yalnızca kamu malı ya da açık lisanslı görseller kullanılmalıdır.
+Depoda kuramcı fotoğrafı yoktur; kartlarda baş harfler gösterilir. Görsel eklemek için dosyayı `gorseller/` klasörüne koyun ve `gorseller/kunye.csv` içinde o satırın kaynak, lisans ve hak sahibi sütunlarını doldurun (ayrıntı: `gorseller/OKU.txt`). Künyesi eksik görsel sayfaya eklenmez. Yalnızca kamu malı ya da açık lisanslı görseller kullanılmalıdır.
 
 ## Kaynak ve sorumluluk
 

@@ -1,0 +1,12 @@
+Kuramcı görselleri
+
+1. Görseli bu klasöre, kunye.csv dosyasındaki "dosya" sütununda yazan adla kaydedin (örnek: freud.jpg).
+   Farklı uzantı kullanırsanız (png, webp) sütundaki adı da değiştirin.
+2. kunye.csv dosyasını Excel ile açıp o satırın üç sütununu doldurun:
+   kaynak : görselin sayfa adresi
+   lisans : sayfada yazan lisans (örnek: Kamu malı, CC BY-SA 4.0)
+   sahibi : fotoğrafçı ya da kurum; bilinmiyorsa "Bilinmiyor"
+3. Üç sütunu dolu olmayan ya da dosyası bulunmayan satır sayfaya eklenmez; kartta baş harfler kalır.
+4. Yalnızca kamu malı ya da açık lisanslı görseller kullanın. Kare ya da dikey, en az 300 piksel genişlik yeterlidir.
+
+Görseller eklendikten sonra rehber "python tools/olustur.py" ile yeniden üretilir.
